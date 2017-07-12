@@ -21,6 +21,16 @@ module.exports = function (grunt) {
                         to: '<%=pkg.name%>-<%=pkg.version%>.style.css'
                     }
                 ]
+            },
+            js: {
+                src: ['build/js/<%=pkg.name%>-<%=pkg.version%>.min.js'],
+                dest: 'build/js/',
+                replacements: [
+                    {
+                        from: 'FAC_VERSION',
+                        to: '<%=pkg.version%>'
+                    }
+                ]
             }
         },
 
@@ -30,7 +40,7 @@ module.exports = function (grunt) {
                 banner: '/*! <%=pkg.name%>-<%=pkg.version%>.js <%= grunt.template.today("yyyy-mm-dd")%> */\n'
             },
             build: {
-                src: 'src/js/*.js',
+                src: ['src/js/*.js', 'src/js/*/*.js'],
                 dest: 'build/js/<%=pkg.name%>-<%=pkg.version%>.min.js'
             }
         },
@@ -54,6 +64,18 @@ module.exports = function (grunt) {
                 cwd: 'src/html/',
                 src: '*',
                 dest: 'build/'
+            },
+            libjs:{
+                expand: true,
+                cwd: 'libs/js',
+                src: '*',
+                dest: 'build/js'
+            },
+            libcss:{
+                expand: true,
+                cwd: 'libs/css',
+                src: '*',
+                dest: 'build/css'
             }
         },
 
