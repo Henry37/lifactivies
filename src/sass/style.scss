@@ -1,3 +1,10 @@
-a{
-    text-decoration: none;
-}
+//import base scss
+@import './base/base.scss';
+@import './base/color.scss';
+
+//import widgets scss
+@import './widgets/textbox.scss';
+
+
+//import comopnent scss
+// @import './component/*.scss';
