@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    background: $deep-blue;
+    position: relative;
+}
+
+footer{
+    background: $deep-blue;
+    position: relative;
+}
+
+.center-wrap{
+    width: 1024px;
+    margin: 0 auto;
+}
