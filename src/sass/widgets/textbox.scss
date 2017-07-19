@@ -1,0 +1,26 @@
+.widget-textbox-container{
+    label.widget-textbox-fieldLabel{
+        width: 160px;
+        padding: 0 5px; 
+        display: inline-block;
+        line-height: 38px;
+        cursor: pointer;
+
+        &:focus{
+            font-weight: bold;
+        }
+    }
+
+    input.widget-textbox-input{
+        width: 160px;
+        padding: 0 5px;
+        display: inline-block;
+        border-radius: 5px;
+        border: 1px solid $fac-grey-999;
+        line-height: 38px;
+
+        &:focus{
+            border: 1px solid $fac-blue;
+        }
+    }
+}

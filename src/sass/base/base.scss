@@ -1,6 +1,13 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input{
+    outline: none;
 }
 
 header{
@@ -14,6 +21,7 @@ footer{
 }
 
 .center-wrap{
-    width: 1024px;
+    width: 1360px;
     margin: 0 auto;
+    padding: 20px;
 }
