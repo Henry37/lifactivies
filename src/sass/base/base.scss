@@ -10,6 +10,19 @@ input{
     outline: none;
 }
 
+.inline{
+    display: inline;
+}
+
+.inline-block{
+    display: inline-block;
+}
+
+.hidden{
+    display: none;
+}
+
+
 header{
     background: $deep-blue;
     position: relative;

@@ -1,6 +1,7 @@
 .widget-textbox-container{
     label.widget-textbox-fieldLabel{
         width: 160px;
+        height: 38px;
         padding: 0 5px; 
         display: inline-block;
         line-height: 38px;
@@ -13,6 +14,7 @@
 
     input.widget-textbox-input{
         width: 160px;
+        height: 38px;
         padding: 0 5px;
         display: inline-block;
         border-radius: 5px;
@@ -22,5 +24,23 @@
         &:focus{
             border: 1px solid $fac-blue;
         }
+    }
+
+    span.widget-textbox-desc{
+        width: 160px;
+        height: 38px;
+        padding: 0 5px;
+        display: inline-block;
+        line-height: 38px;
+        color: $fac-grey-069;
+    }
+
+    span.widget-textbox-error{
+        width: 160px;
+        height: 38px;
+        padding: 0 5px;
+        display: none;
+        line-height: 38px;
+        color: $fac-red-error;
     }
 }

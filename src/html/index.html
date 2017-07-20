@@ -25,10 +25,18 @@
         
         var t = $("#textbox1").textbox({
             fieldLabel: "sample" ,
-            cls:"inline",
-            labelCls: "xxl"
+            cls:"inline-block",
+            labelCls: "xxl",
+            desc: "description",
+            descCls: "s",
+            error: "err",
+            xtype: {
+                xtype: "number",
+                min: "10",
+                max: "100"
+            }
         });
-
-        t.textbox("show");
+        t.textbox("setValue", 1000);
+        t.textbox("validate");
     </script>
 </html>
