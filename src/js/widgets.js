@@ -33,12 +33,11 @@
                 number : function(para){
                     var min = para.min;
                     var max = para.max;
-                    var reg = /^\-?\d+\.?\d+$/;
+                    var reg = /^\-?\d+\.?\d{0,}$/;
                     if(!value.toString().match(reg)){
-                        console.log(value.toString())
                         return $.fac.EN.TIPS.VALIDATION.NOT_A_NUMBER;
                     }else if(parseFloat(value) > max || parseFloat(value) < min){
-                        return $.fac.EN.TIPS.VALIDATION.OUT_OF_RANGE.replace(/%1/g, min).replace(/%2/g, max);;
+                        return $.fac.EN.TIPS.VALIDATION.OUT_OF_RANGE.replace(/%1/g, min).replace(/%2/g, max);
                         
                     }
                     return true;

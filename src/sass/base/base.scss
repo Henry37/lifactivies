@@ -19,7 +19,7 @@ input{
 }
 
 .hidden{
-    display: none;
+    display: none !important;
 }
 
 
@@ -34,7 +34,16 @@ footer{
 }
 
 .center-wrap{
-    width: 1360px;
-    margin: 0 auto;
+    width: 100%;
     padding: 20px;
+
+    @include bp($medium-screen){
+        width: 1024px;
+        margin: 0 auto;
+    }
+
+    @include bp($large-screen){
+        width: 1440px;
+        margin: 0 auto;
+    }
 }

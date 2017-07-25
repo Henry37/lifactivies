@@ -16,7 +16,7 @@
                 self.cls = self.cls || "";
                 self.labelCls = self.labelCls || "";
                 self.inputCls = self.inputCls || "";
-                self.allowBlank = self.allowBlank || true;
+                self.allowBlank = self.allowBlank || false;
                 self.validator = self.validator || {};
 
 
@@ -27,9 +27,17 @@
                 inHTML += "<label class='widget-textbox-fieldLabel " + self.labelCls + "' for='" + self.id + "'>" + self.fieldLabel + "</label>";
                 inHTML += "<input class='widget-textbox-input " + self.inputCls + "' id='" + self.id + "'  name='" + self.name + "'/>";
                 inHTML += "<span class='widget-textbox-desc " + self.descCls + "'>" + self.desc + "</span>";
-                inHTML += "<span class='widget-textbox-error " + self.errorCls + "'>"+ self.error + "</span>";
+                inHTML += "<span class='widget-textbox-error hidden " + self.errorCls + "'>"+ self.error + "</span>";
                 self.html(inHTML);
 
+                self.delegate("input.widget-textbox-input", "keyup", function(e){
+                    var newValue = self.find("input.widget-textbox-input").val();
+                    if(newValue === self.value){
+                        return;
+                    }
+                    self.value = newValue;
+                    self.validate();
+                });
 
                 self._init = true;
             }

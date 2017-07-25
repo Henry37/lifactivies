@@ -1,0 +1,11 @@
+$small_screen: 0px;
+$medium_screen: 1024px;
+$large_screen: 1440px;
+$huge_screen: 1920px;
+
+@mixin bp($breakpoint){
+    @media only screen and ( min-width: $breakpoint )
+  {
+    @content;
+  }
+}
