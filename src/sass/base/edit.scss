@@ -1,0 +1,68 @@
+.components-selector{
+    width: 200px;
+    height: 400px;
+    position: fixed;
+    left: 30px;
+    top: 140px;
+    background: $white;
+    z-index: 9999;
+    border: 1px solid $fac-grey-999;
+    border-radius: 5px;
+    overflow: hidden;
+
+    .components-selector-head{
+        height: 30px;
+        line-height: 30px;
+        padding-left: 10px;
+        background: $fac-blue;
+        color: $white;
+
+        .text{
+            font-weight: bold;
+            cursor: move;
+        }
+
+        .icon{
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            float: right;
+            cursor: pointer;
+            color: $white;
+            font-weight: bold;
+
+            &:hover{
+                color: $fac-grey-069;
+            }
+        }
+    }
+
+    .components-selector-body{
+        .components-selector-categroy{
+            height: 30px;
+            line-height: 30px;
+            background: $fac-grey-eee;
+            text-align: center;
+            color: $fac-grey-069;
+        }
+
+        li{
+            list-style: none;
+            height: 30px;
+            line-height: 30px;
+            padding: 0 10px;
+            background: $white;
+            cursor: pointer;
+            border-bottom: 1px solid $fac-grey-eee;
+
+            &:hover{
+                font-weight: bold;
+            }
+        }
+    }
+
+    
+    
+    
+    
+}

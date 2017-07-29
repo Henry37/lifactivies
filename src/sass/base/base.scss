@@ -24,13 +24,15 @@ input{
 
 
 header{
-    background: $deep-blue;
+    background: $fac-deep-blue;
     position: relative;
 }
 
 footer{
-    background: $deep-blue;
-    position: relative;
+    width: 100%;
+    background: $fac-deep-blue;
+    position: fixed;
+    bottom: 0;
 }
 
 .center-wrap{
@@ -46,4 +48,13 @@ footer{
         width: 1440px;
         margin: 0 auto;
     }
+}
+
+.dragable{
+    opacity: 0.8;
+    cursor: move !important;
+}
+
+.onDrag{
+    border: 3px solid $black !important;
 }
