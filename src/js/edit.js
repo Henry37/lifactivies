@@ -41,44 +41,51 @@
                 selector.hide();
             });
 
-            self.setDragable(selector, function(e){
+            self.setDraggable(selector, function(e){
                 selector.addClass("onDrag");
                 selector.originX = e.clientX;
                 selector.originY = e.clientY;
                 selector.originL = parseInt(selector.css("left").match(/\d+/));
                 selector.originT = parseInt(selector.css("top").match(/\d+/));
+                selector.isMoving = true;
                 
             }, function(e){
                 var x = e.clientX;
                 var y = e.clientY;
-                selector.hide();
+                console.log("dragging");
+                if(selector.isMoving){
+                    selector.css({
+                        top: (selector.originT + e.clientY - selector.originY) + "px",
+                        left: (selector.originL + e.clientX - selector.originX) + "px"
+                    });
+                }
+                
             }, function(e){
                 selector.removeClass("onDrag");
-                selector.show();
-                selector.css({
-                    top: (selector.originT + e.clientY - selector.originY) + "px",
-                    left: (selector.originL + e.clientX - selector.originX) + "px"
-                });
+                selector.isMoving = false;
+                
             });
         },
 
-        setDragable: function(selector, callDragstart, callDrag, callDragend){
+        setDraggable: function(selector, callDragstart, callDrag, callDragend){
             var self = this;
             var selector = selector;
 
-            selector.attr("draggable", true);
             selector.addClass("draggable");
 
-            selector.on("dragstart", function(e){
+            selector.on("mousedown", function(e){
                 callDragstart(e);
+                console.log("on");
             });
 
-            selector.on("drag", function(e){
+            selector.on("mousemove", function(e){
                 callDrag(e);
+                console.log("move");
             });
 
-            selector.on("dragend", function(e){
+            selector.on("mouseup", function(e){
                 callDragend(e);
+                console.log("up");
             });   
         }
     });
